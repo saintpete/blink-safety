@@ -37,7 +37,6 @@ class DispatchLifxNotifications implements ShouldQueue
                 $lamps = $user->lamps()->where(['blink_safety_connected' => true])->get();
 
                 foreach ($lamps as $lamp) {
-                    Log::info('Lamp triggered id : ' . $lamp->lamp_id);
                     $response = Http::withHeaders([
                         'Authorization' => 'Bearer ' . $token->access_token
                     ])->post('https://api.lifx.com/v1/lights/id:' . $lamp->lamp_id . '/effects/breathe', [
@@ -49,8 +48,6 @@ class DispatchLifxNotifications implements ShouldQueue
                         'power_on' => true,
                         'peak' => 0.5
                     ]);
-
-                    Log::info($response->json());
 
                     Http::withHeaders([
                         'Authorization' => 'Bearer ' . $token->access_token,

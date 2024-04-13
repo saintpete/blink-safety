@@ -6,7 +6,6 @@ use App\Http\Requests\Profile\LanguageRequest;
 use App\Models\Language;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Log;
 
 /**
  * This controller handles updating a user's preferred language within the application.
