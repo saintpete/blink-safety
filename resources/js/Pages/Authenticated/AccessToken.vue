@@ -99,7 +99,7 @@ function submitAccessToken() {
             <form @submit.prevent="submitAccessToken" id="step-02" aria-labelledby="setup-access-token">
                 <div class="mx-4 my-4 pb-4 border-b border-gray-300">
                     <h2 id="setup-access-token" class="text-lg font-medium text-gray-900">{{ $t('dashboard.second_section_title')}}</h2>
-                    <p class="text-base text-gray-600">{{ $t('dashboard.second_section_subtitle')}}</p>
+                    <p class="text-base text-gray-600">{{ $t('dashboard.second_section_subtitle')}} <a href="https://cloud.lifx.com/sign_in" target="_blank" class="underline text-purple-600">{{ $t('dashboard.second_section_signing_link') }}</a></p>
 
                 </div>
                 <div class="mx-4 my-4">
