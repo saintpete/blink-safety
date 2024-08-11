@@ -70,5 +70,9 @@ class EventsController extends Controller
         }
     }
 
-
+    public function latest(): JsonResponse
+    {
+        $event = Event::where('precinct', '33705')->latest('crime_date')->first();
+        return response()->json(['event' => $event]);
+    }
 }

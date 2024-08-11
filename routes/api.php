@@ -10,6 +10,7 @@ Route::get('test-event', function () {
     Artisan::call('app:test-broadcast-command');
 });
 
+Route::get('/latest', [EventsController::class, 'latest']);
 Route::post('/find-previous-event', [EventsController::class, 'findPrevious']);
 Route::post('/find-next-event', [EventsController::class, 'findNext']);
 
